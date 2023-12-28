@@ -29,8 +29,11 @@ Before running this project, ensure you have the following installed:
 
      ```npm install```
 
-4. Place your Minecraft Bedrock server files in the ```server``` folder at the root of the project.
+4. Place your Minecraft Bedrock server files in the ```server``` folder at the root of the project:
 
+   - ```mkdir server```
+   - Move the contents of Bedrock Dedicated Server to ```server```
+   
 ## Usage
 
 1. Start the application:
