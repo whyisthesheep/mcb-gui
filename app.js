@@ -80,6 +80,19 @@ app.post('/give', (req, res) => {
   }
 });
 
+app.post('/run', (req, res) => {
+  const command = req.body.command;
+
+  if (bedrockProcess && command) {
+    const fullCommand = `${command}\n`;
+    bedrockProcess.stdin.write(fullCommand);
+    res.send(`Sent "${fullCommand.trim()}" command to Bedrock server.`);
+  } else {
+    res.status(400).send('Invalid request.');
+  }
+});
+
+
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });

@@ -73,9 +73,9 @@
     <h2>Commands</h2>
     <p>GIVE: 
       <input id="giveUsername" type="text" placeholder="Enter username"> 
-      <input id="giveItem" type="text" placeholder="Enter item"> 
-      <button class="button run-button" onclick="runGive()">Run</button>
-    </p>
+	  <input id="giveItem" type="text" placeholder="Enter item"> 
+	  <button class="button run-button" onclick="runGive()">Run</button>
+      <p><input id="giveCommand" type="text" placeholder="Enter command here"> <button class="button run-button" onclick="runCommand()">Run</button></p>
   </div>
 
   <script>
@@ -107,6 +107,11 @@
       const username = document.getElementById('giveUsername').value;
       const item = document.getElementById('giveItem').value;
       sendCommand('/give', { username, item });
+    }
+
+    function runCommand() {
+      const command = document.getElementById('giveCommand').value;
+      sendCommand('/run', { command });
     }
 
     function sendCommand(endpoint, data) {
