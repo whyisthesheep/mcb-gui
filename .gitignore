@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+
+# Generated files
+public/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# IDE-specific files
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Minecraft server
+server/
