@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Server Manager</title>
+  <style>
+    body {
+      background-color: #424242;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      height: 100vh;
+      font-family: 'Arial', sans-serif; /* Change the font to your preference */
+    }
+
+    .box {
+      flex: 1;
+      background-color: #363636;
+      margin: 10px;
+      padding: 20px;
+      box-sizing: border-box;
+      color: white;
+      height: 40vh; /* Adjust the height as needed */
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .start-button {
+      background-color: #4CAF50; /* Green */
+      color: white;
+    }
+
+    .stop-button {
+      background-color: #FF0000; /* Red */
+      color: white;
+    }
+
+    .run-button {
+      background-color: #3498db; /* Blue */
+      color: white;
+    }
+
+    input {
+      padding: 8px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Manage</h2>
+    <button class="button start-button" onclick="startServer()">Start</button>
+    <button class="button stop-button" onclick="stopServer()">Stop</button>
+  </div>
+  <div class="box">
+    <h2>Permissions</h2>
+    <p>OP: <input id="opInput" type="text" placeholder="Enter username"> <button class="button run-button" onclick="runOp()">Run</button></p>
+    <p>DEOP: <input id="deopInput" type="text" placeholder="Enter username"> <button class="button run-button" onclick="runDeop()">Run</button></p>
+  </div>
+  <div class="box">
+    <h2>Commands</h2>
+    <p>GIVE: 
+      <input id="giveUsername" type="text" placeholder="Enter username"> 
+      <input id="giveItem" type="text" placeholder="Enter item"> 
+      <button class="button run-button" onclick="runGive()">Run</button>
+    </p>
+  </div>
+
+  <script>
+    function startServer() {
+      fetch('/start', { method: 'POST' })
+        .then(response => response.text())
+        .then(message => console.log(message))
+        .catch(error => console.error(error));
+    }
+
+    function stopServer() {
+      fetch('/stop', { method: 'POST' })
+        .then(response => response.text())
+        .then(message => console.log(message))
+        .catch(error => console.error(error));
+    }
+
+    function runOp() {
+      const username = document.getElementById('opInput').value;
+      sendCommand('/op', { username });
+    }
+
+    function runDeop() {
+      const username = document.getElementById('deopInput').value;
+      sendCommand('/deop', { username });
+    }
+
+    function runGive() {
+      const username = document.getElementById('giveUsername').value;
+      const item = document.getElementById('giveItem').value;
+      sendCommand('/give', { username, item });
+    }
+
+    function sendCommand(endpoint, data) {
+      fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.text())
+      .then(message => console.log(message))
+      .catch(error => console.error(error));
+    }
+  </script>
+</body>
+</html>
