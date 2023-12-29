@@ -12,5 +12,3 @@ echo Cleaning up...
 del bedrock-server.zip
 
 echo Minecraft Bedrock Server installation complete.
-npm install
-pause
