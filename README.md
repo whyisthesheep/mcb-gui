@@ -66,7 +66,7 @@ Before running this project, ensure you have the following installed:
 ## Future
 - [x] Windows
 - [x] Windows install script
-- [ ] Linux (should work the same in theory but it is written as a `.exe` in `app.js` rather than `.sh` and also an environment variable is required in the command; I will probably add linux support soon.)
+- [ ] Linux (should work the same in theory but the bedrock server executable is  a `.exe` in `app.js` rather than `.sh` and also an environment variable is required in the command; I will probably add linux support soon.)
 - [ ] Linux install script
 - [ ] Modular website design
 - [ ] Console on GUI
