@@ -2,6 +2,7 @@
 
 This project provides a simple web-based GUI for managing a Minecraft Bedrock server. Users can manage and send commands to the server using the provided interface.
 ![Screenshot](images/screenshot.png)
+
 ## Prerequisites
 
 Before running this project, ensure you have the following installed:
@@ -31,8 +32,13 @@ Before running this project, ensure you have the following installed:
 
 4. Place your Minecraft Bedrock server files in the ```server``` folder at the root of the project:
 
-   - ```mkdir server```
-   - Move the contents of Bedrock Dedicated Server to ```server```
+   - Install Minecraft bedrock:
+      - Automatic:
+         - Run ```install.bat```
+
+      - Manual:
+         - ```mkdir server```
+         - Move the contents of Bedrock Dedicated Server to ```server```
    
 ## Usage
 
@@ -56,9 +62,21 @@ Before running this project, ensure you have the following installed:
 
 - **Changing Port:** If you want to use a different port, modify the ```port``` variable in ```app.js```.
 
+## Future
+- [x] Windows
+- [x] Windows install script
+- [] Linux (should work the same in theory but it is written as a `.exe` in `app.js` rather than `.sh` and also an environment variable is required in the command; I will probably add linux support soon.)
+- [] Linux install script
+- [] Modular website design
+- [] Console on GUI
+- [] Player list/Manager
+- [] Settings menu
+- [] Themes
+- [] World manager
+
 ## Contributing
 
-Feel free to contribute by opening issues or submitting pull requests. Your feedback and contributions are welcome!
+Feel free to contribute by opening issues or submitting pull requests. Your feedback and contributions are welcome! Please make prs to the dev branch unless it is a simple change.
 
 ## License
 
