@@ -1,7 +1,7 @@
 # Minecraft Bedrock Server GUI
 
 This project provides a simple web-based GUI for managing a Minecraft Bedrock server. Users can manage and send commands to the server using the provided interface.
-
+![Screenshot](images/screenshot.png)
 ## Prerequisites
 
 Before running this project, ensure you have the following installed:
