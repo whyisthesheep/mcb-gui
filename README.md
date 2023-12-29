@@ -62,4 +62,4 @@ Feel free to contribute by opening issues or submitting pull requests. Your feed
 
 ## License
 
-This project is licensed under the [Mozilla Public License](LICENSE).
+This project is licensed under the [Mozilla Public License v2](LICENSE).
