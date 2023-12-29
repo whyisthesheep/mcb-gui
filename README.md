@@ -37,6 +37,7 @@ Before running this project, ensure you have the following installed:
          - Run ```install.bat```
 
       - Manual:
+         - Download [Bedrock Dedicated server](https://www.minecraft.net/en-us/download/server/bedrock)
          - ```mkdir server```
          - Move the contents of Bedrock Dedicated Server to ```server```
    
